@@ -18,7 +18,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'itamae/plugin/resource/aws'
+
+Aws.config[:region] = 'ap-northeast-1'
+
+aws_ebs_volume 'itamae-plugin-resource-aws test' do
+  action [:create, :attach] # :attach is not supported currently
+  availability_zone 'ap-northeast-1b'
+  device '/dev/xvdf'
+  volume_type 'standard'
+  size 10
+end
+```
 
 ## Contributing
 
