@@ -1,6 +1,8 @@
 # Itamae::Plugin::Resource::Aws
 
-TODO: Write a gem description
+This is [Itamae](http://itamae.kitchen/) plugin for controlling AWS resources.
+
+Currently supports creating EBS volmues only. But we will add more features.
 
 ## Installation
 
@@ -23,7 +25,7 @@ require 'itamae/plugin/resource/aws'
 
 Aws.config[:region] = 'ap-northeast-1'
 
-aws_ebs_volume 'itamae-plugin-resource-aws test' do
+aws_ebs_volume 'db_ebs_volume' do
   action [:create, :attach] # :attach is not supported currently
   availability_zone 'ap-northeast-1b'
   device '/dev/xvdf'
